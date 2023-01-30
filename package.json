@@ -1,0 +1,25 @@
+{
+  "name": "mubco-assesment-project",
+  "version": "1.0.0",
+  "description": "MUBCO assesment project",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "server": "nodemon server",
+    "data:import": "node seeder",
+    "data:destroy": "node seeder -d",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kemal Can SARI",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.9.0"
+  }
+}
