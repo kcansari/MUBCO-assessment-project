@@ -4,6 +4,8 @@ import express from 'express'
 import dotenv from 'dotenv'
 import connectDB from './config/db.js'
 import userRoutes from './routes/userRoutes.js'
+import commentRoutes from './routes/commentRoutes.js'
+import movieRoutes from './routes/movieRoutes.js'
 const app = express()
 
 // Allow us to accept JSON data in the body.
@@ -16,6 +18,8 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/users', userRoutes)
+app.use('/api/comments', commentRoutes)
+app.use('/api/movies', movieRoutes)
 
 app.use(notFound)
 app.use(errorHandler)

@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import User from './models/userModel.js'
 import Comment from './models/commentModel.js'
+import Movie from './models/moviesModel.js'
 import connectDB from './config/db.js'
 import bcrypt from 'bcryptjs'
 
@@ -13,9 +14,9 @@ const importData = async () => {
   try {
     await Comment.deleteMany()
     await User.deleteMany()
+    await Movie.deleteMany()
 
     const adminUser = new User({
-      _id: new mongoose.Types.ObjectId(),
       username: 'admin',
       email: 'admin@example.com',
       password: '123456',
@@ -32,6 +33,15 @@ const importData = async () => {
     adminUser.comments.push(comment1)
     await adminUser.save()
 
+    const sampleMovie = new Movie({
+      title: 'The Shawshank Redemption',
+      genres: ['Drama'],
+      director: 'Frank Darabont',
+      comments: [comment1],
+    })
+
+    await sampleMovie.save()
+
     console.log('Data Imported'.green.inverse)
     process.exit()
   } catch (error) {
@@ -44,6 +54,7 @@ const destroyData = async () => {
   try {
     await Comment.deleteMany()
     await User.deleteMany()
+    await Movie.deleteMany()
 
     console.log('Data Destroyed!'.red.inverse)
     process.exit()
