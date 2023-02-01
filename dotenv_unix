@@ -1,5 +1,5 @@
 # Ticket: Connection
-# Rename this file to .env after filling in your MFLIX_DB_URI and your SECRET_KEY
+# Rename this file to .env after filling in your MONGO_URI and your JWT_SECRET
 # Do not surround the URI with quotes
 JWT_SECRET=super_secret_key_you_should_change
 MONGO_URI=mongodb+srv://<username>:<password></password>@<your-atlas-cluster-address>
