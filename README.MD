@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
- git clone <poject-link>
+ git clone https://github.com/kcansari/MUBCO-assessment-project.git
 ```
 
 ## Node Library Dependencies
