@@ -1,4 +1,5 @@
 import Movie from '../models/moviesModel.js'
+import Comment from '../models/commentModel.js'
 import asyncHandler from 'express-async-handler'
 
 // @desc Get all movies
@@ -91,6 +92,10 @@ const editMovie = asyncHandler(async (req, res) => {
 const deleteMovie = asyncHandler(async (req, res) => {
   const { movieId } = req.params
   let movie = await Movie.findByIdAndDelete(movieId)
+  movie.comments.forEach(async (comment) => {
+    await Comment.findByIdAndDelete(comment)
+  })
+  movie.comments = []
   res.json({ message: 'Movie was deleted', data: movie })
 })
 export { getAllMovies, getMovie, createMovie, editMovie, deleteMovie }
