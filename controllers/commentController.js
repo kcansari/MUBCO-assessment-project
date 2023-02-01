@@ -1,9 +1,6 @@
-import User from '../models/userModel.js'
 import Comment from '../models/commentModel.js'
 import asyncHandler from 'express-async-handler'
 import Movie from '../models/moviesModel.js'
-import generateToken from '../utils/generateToken.js'
-import mongoose from 'mongoose'
 
 // @desc Get all comments
 // @route GET /api/comments

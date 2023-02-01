@@ -6,7 +6,9 @@ import connectDB from './config/db.js'
 import userRoutes from './routes/userRoutes.js'
 import commentRoutes from './routes/commentRoutes.js'
 import movieRoutes from './routes/movieRoutes.js'
+
 const app = express()
+colors.enable()
 
 // Allow us to accept JSON data in the body.
 app.use(express.json())
@@ -27,5 +29,5 @@ app.use(errorHandler)
 const PORT = process.env.PORT || 5000
 
 app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`.yellow.bold)
+  console.log(colors.bgCyan(`Server listening on port ${PORT}`))
 })

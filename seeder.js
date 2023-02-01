@@ -1,14 +1,13 @@
 import colors from 'colors'
-import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import User from './models/userModel.js'
 import Comment from './models/commentModel.js'
 import Movie from './models/moviesModel.js'
 import connectDB from './config/db.js'
-import bcrypt from 'bcryptjs'
 
 dotenv.config()
 connectDB()
+colors.enable()
 
 const importData = async () => {
   try {
