@@ -77,6 +77,38 @@ npm run data:import
 npm run data:destroy
 ```
 
+## API Documentation
+
+### User & Auth
+
+| Request | URL                | Parameters                      | Description                                       |
+| ------- | ------------------ | ------------------------------- | ------------------------------------------------- |
+| POST    | /api/users/login   | "email","password"              | This route allows to sign in user's account.      |
+| POST    | /api/users         | "username", "email", "password" | This route allows to register page.               |
+| GET     | /api/users         | non-parameter                   | List all users (Only Admin)                       |
+| GET     | /api/users/profile | non-parameter                   | Shows user's profile which is online              |
+| PUT     | /api/users/profile | "username", "email", "password" | Changes user informations which had been created. |
+| DELETE  | /api/users/:id     | non-parameter                   | Delete user (Only Admin)                          |
+
+### Comments
+
+| Request | URL                      | Parameters    | Description                              |
+| ------- | ------------------------ | ------------- | ---------------------------------------- |
+| GET     | /api/comments            | non-parameter | List all comments which belong all users |
+| POST    | /api/comments/:movieId   | "content"     | Make a new comment to specific movie     |
+| DELETE  | /api/comments/:commentId | non-parameter | Delete a comment (Only Admin)            |
+| PUT     | /api/comments/:commentId | "content"     | Changes content of comment               |
+
+### Movies
+
+| Request | URL                   | Parameters                       | Description                              |
+| ------- | --------------------- | -------------------------------- | ---------------------------------------- |
+| GET     | /api/movies           | non-parameter                    | Lists all movies (Public)                |
+| GET     | /api/movies/:movieId  | non-parameter                    | Shows a movie which is typed id (Public) |
+| POST    | /api/movies/:movieId  | "title","genres [ ]", "director" | Create a new movie (Only Admin)          |
+| PUT     | /api/movies/:movieId  | "title", "genres []", "director" | Changes movie's entities (Only Admin)    |
+| DELETE  | /api/movies/:moviesId | non-parameter                    | Delete movie (Only Admin)                |
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
