@@ -40,7 +40,11 @@ Open the file for your chosen operating system and enter your Atlas SRV connecti
  MONGO_URI = mongodb+srv://...
 ```
 
-It's highly suggested you also change the JWT_SECRET to some very long, very random string.
+It's highly suggested you also change the **JWT_SECRET** to some very long, very random string.
+
+```bash
+JWT_SECRET=super_secret_key_you_should_change
+```
 
 When you've edited the file, rename it to .env with the following command:
 
@@ -54,7 +58,7 @@ to run on port **5000** by default - if you need to run on a port other than
 5000, you can edit the **dotenv_win** (if on Windows) or the **dotenv_unix** file
 (if on Linux or Mac) in the root directory to modify the value of **PORT**.
 
-In the mflix-js directory, run the following commands:
+In the project directory, run the following commands:
 
 ```bash
 # start the project
