@@ -43,7 +43,7 @@ Open the file for your chosen operating system and enter your Atlas SRV connecti
 It's highly suggested you also change the **JWT_SECRET** to some very long, very random string.
 
 ```bash
-JWT_SECRET=super_secret_key_you_should_change
+JWT_SECRET = super_secret_key_you_should_change
 ```
 
 When you've edited the file, rename it to .env with the following command:
